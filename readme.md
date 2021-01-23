@@ -10,6 +10,7 @@ git clone https://github.com/gjhonic/botjs.git
 2) Install package
 ```
 npm i discord.js
+npm i osmosis
 ```
 
 3) Create file auth_data.js and insert code
