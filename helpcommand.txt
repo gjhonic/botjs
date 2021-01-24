@@ -1,0 +1,10 @@
+** System command **
+```
+!help - Список всех команд
+!downloadbot - Инструкция установка бота
+```
+** Personal command **
+```
+pattern <title_pattent> - информация по паттерну.
+...
+```
