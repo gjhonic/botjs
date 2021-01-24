@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
-var http = require('http');
+
+
 let MyAuth = require('./auth_data');
 let myBot = require('./mybot');
 
@@ -14,7 +15,7 @@ bot.on('message', message => {
     else if(message.content == "!downloadbot") myBot.processDownloadbot(message)
     else if(message.content.indexOf("!") == 0) myBot.processCommandNotFound(message)
 
-    if(message.content.includes("Данеев найди")) processFind(message);
+    if(message.content.includes("Данеев найди")) myBot.processFind(message);
 })
 
 bot.on('ready', () => {

@@ -8,7 +8,7 @@ git clone https://github.com/gjhonic/botjs.git
 ```
 2) Install package
 ```
-npm update
+npm install
 ```
 3) Create file auth_data.js and insert code
 ```js
