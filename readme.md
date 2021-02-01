@@ -13,7 +13,7 @@ npm install
 3) Create file auth_data.js and insert code
 ```js
 class MyAuth{
-  login = "<login>";
+  login = "<token>";
 }
 module.exports = MyAuth;
 ```

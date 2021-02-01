@@ -1,12 +1,9 @@
 const Discord = require('discord.js');
 
-
-let MyAuth = require('./auth_data');
+let auth_data = require('./auth_data');
 let myBot = require('./mybot');
 
-let auth_data = new MyAuth();
 const bot = new Discord.Client();
-
 
 //Обработчики событий --->
 bot.on('message', message => {
@@ -22,4 +19,4 @@ bot.on('ready', () => {
     console.log('Bot ' + bot.user.tag + ' started ...');
 })
 
-bot.login(auth_data.login);
+bot.login(auth_data.token);
