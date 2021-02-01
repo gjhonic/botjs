@@ -16,7 +16,6 @@ npm install
     "token" : "token",
     "prefix" : "prefix"
 }
-module.exports = MyAuth;
 ```
 4) Start bot
 ```
