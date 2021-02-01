@@ -1,0 +1,24 @@
+{
+  "name": "botjs",
+  "version": "1.0.0",
+  "description": "**Instruction manual**",
+  "main": "auth_data.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gjhonic/botjs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gjhonic/botjs/issues"
+  },
+  "homepage": "https://github.com/gjhonic/botjs#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "fs": "0.0.1-security",
+    "http": "0.0.1-security"
+  }
+}

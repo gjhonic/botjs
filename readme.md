@@ -1,4 +1,4 @@
-# Discord Bot from JS
+# Discord Bot JS
 
 **Instruction manual**
 
@@ -6,20 +6,17 @@
 ```
 git clone https://github.com/gjhonic/botjs.git
 ```
-
 2) Install package
 ```
-npm i discord.js
+npm install
 ```
-
 3) Create file auth_data.js and insert code
 ```js
 class MyAuth{
-  login = "<login>";
+  login = "<token>";
 }
 module.exports = MyAuth;
 ```
-
 4) Start bot
 ```
 node bot.js

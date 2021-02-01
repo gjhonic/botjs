@@ -1,27 +1,22 @@
 const Discord = require('discord.js');
+
+let auth_data = require('./auth_data');
+let myBot = require('./mybot');
+
 const bot = new Discord.Client();
-let MyAuth = require('./auth_data');
-let DataSayBot = require('./data');
-let auth_data = new MyAuth();
-
-
-//Функция обработки сообщений
-function processFind(message){
-    let str_query_pos = message.content.indexOf("Данеев найди") + 13;
-    let query = message.content.slice(str_query_pos);
-
-    message.channel.send('Я не буду искать "' + query + '"');
-}
-
 
 //Обработчики событий --->
 bot.on('message', message => {
 
-    if(message.content.includes("Данеев найди")) processFind(message);
+    if(message.content == "!help") myBot.processHelp(message)
+    else if(message.content == "!downloadbot") myBot.processDownloadbot(message)
+    else if(message.content.indexOf("!") == 0) myBot.processCommandNotFound(message)
+
+    if(message.content.includes("Данеев найди")) myBot.processFind(message);
 })
 
 bot.on('ready', () => {
-    console.log('Bot started ' + bot.user.tag);
+    console.log('Bot ' + bot.user.tag + ' started ...');
 })
 
-bot.login(auth_data.login);
+bot.login(auth_data.token);
