@@ -1,9 +1,0 @@
-** System command **
-```
-!help - Список всех команд
-!downloadbot - Инструкция установка бота
-```
-** Personal command **
-```
-...
-```
