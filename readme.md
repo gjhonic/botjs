@@ -1,7 +1,9 @@
 # Discord Bot JS
 
-**Instruction manual**
+Bot for programmers
+v 0.1.1
 
+**Instruction manual**
 1) Loading
 ```
 git clone https://github.com/gjhonic/botjs.git
@@ -10,7 +12,7 @@ git clone https://github.com/gjhonic/botjs.git
 ```
 npm install
 ```
-3) Create file config.js and insert code
+3) Create file config.json and insert code
 ```json
 {
     "token" : "token",
