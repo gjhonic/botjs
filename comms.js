@@ -12,6 +12,25 @@ function help(robot, mess, args){
   mess.channel.send(fileContent).then(mess.channel.send(mess.author));
 }
 
+//Вывожу список доступных команд
+function calc(robot, mess, args){
+
+  let params = mess.content.split(' ');
+  total = Number(params[1]);
+  let i=2;
+
+  while(i<params.length){
+    if(params[i]=="+") total = total + Number(params[i+1]);
+    else if(params[i]=="-") total = total - Number(params[i+1]);
+    else if(params[i]=="*") total = total * Number(params[i+1]);
+    else if(params[i]=="/") total = total / Number(params[i+1]);
+    i+=2;
+  }
+  let answer = "Мне кажется будет "+total;
+
+  mess.channel.send(answer).then(mess.channel.send(mess.author));
+}
+
 //Выводожу readme.md
 function link(robot, mess, args){
   let fileContent = fs.readFileSync("readme.md", "utf8");
