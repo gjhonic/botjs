@@ -12,22 +12,25 @@ function help(robot, mess, args){
   mess.channel.send(fileContent).then(mess.channel.send(mess.author));
 }
 
-//Вывожу список доступных команд
+//Решу пример
 function calc(robot, mess, args){
 
   let params = mess.content.split(' ');
-  total = Number(params[1]);
-  let i=2;
+  let value = eval(params[1]);
 
-  while(i<params.length){
-    if(params[i]=="+") total = total + Number(params[i+1]);
-    else if(params[i]=="-") total = total - Number(params[i+1]);
-    else if(params[i]=="*") total = total * Number(params[i+1]);
-    else if(params[i]=="/") total = total / Number(params[i+1]);
-    i+=2;
-  }
-  let answer = "Мне кажется будет "+total;
+  let answer = "Ответ: "+value;
+  mess.channel.send(answer).then(mess.channel.send(mess.author));
+}
 
+//Выполню JS код
+function ex(robot, mess, args){
+
+  let params = mess.content.split('>>>');
+
+  console.log(params[1].slice(0, -3));
+  let result = eval(params[1].slice(0, -3));
+  
+  let answer = result;
   mess.channel.send(answer).then(mess.channel.send(mess.author));
 }
 
@@ -100,6 +103,11 @@ var comms_list = [
     name: "calc",
     out: calc,
     about: "Вычислю"
+  },
+  {
+    name: "ex",
+    out: ex,
+    about: "Выполнить код"
   }
 ];
 
