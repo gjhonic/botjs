@@ -1,6 +1,7 @@
 const config = require('./config.json');
 const Discord = require('discord.js');
 const fs = require('fs');
+let tags = require('./files/tags.js');
 const prefix = config.prefix;
 const versions = config.versions;
 
@@ -10,6 +11,22 @@ const versions = config.versions;
 function help(robot, mess, args){
   let fileContent = fs.readFileSync("files/help.txt", "utf8");
   mess.channel.send(fileContent).then(mess.channel.send(mess.author));
+}
+
+//Вывожу описание тега
+function tag(robot, mess, args){
+  let params = mess.content.split(' ');
+  let description = "";
+  if(params[1]==null){
+    mess.channel.send("Не указан какой тег").then(mess.channel.send(mess.author));
+    return true;
+  }
+  if(tags.has(params[1]))
+    description = tags.get(params[1]);
+  else
+    description = "Я такой тег не знаю(";
+   
+  mess.channel.send(description).then(mess.channel.send(mess.author));
 }
 
 //Решу пример
@@ -108,6 +125,11 @@ var comms_list = [
     name: "ex",
     out: ex,
     about: "Выполнить код"
+  },
+  {
+    name: "tag",
+    out: tag,
+    about: "Возвращает описание тега"
   }
 ];
 
