@@ -60,13 +60,11 @@ function link(robot, mess, args){
 //Повторяю за тобой
 function say(robot, mess, args){
   if (!mess.member.hasPermission("MANAGE_MESSAGES")) return mess.channel.send("У  вас нет прав"); 
-  let robotmessage = args = mess.content.split(' ');
-  args.shift();
-  args = args.join(' ');
+  let robotmessage = mess.content.split('>');
 
   mess.delete().catch();
 
-  mess.channel.send(robotmessage).then(mess.channel.send(mess.author));
+  mess.channel.send(robotmessage[1]).then(mess.channel.send(mess.author));
 }
 
 //Удаляю n сообщений
