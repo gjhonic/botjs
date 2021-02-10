@@ -1,12 +1,16 @@
 const config = require('./config.json');
 const Discord = require('discord.js');
 const fs = require('fs');
+
+//Справочики
 let tags = require('./files/tags.js');
 let styles = require('./files/styles.js');
+
+//Для бота
 const prefix = config.prefix;
 const versions = config.versions;
 
-// Команды //
+// - - - Команды - - - //
 
 //Вывожу список доступных команд
 function help(robot, mess, args){

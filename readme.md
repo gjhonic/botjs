@@ -1,7 +1,7 @@
 # Discord Bot JS
 
 Bot for programmers
-v 0.1.1
+v 0.1.2
 
 **Instruction manual**
 1) Loading
