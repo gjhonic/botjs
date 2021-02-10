@@ -2,6 +2,7 @@ const config = require('./config.json');
 const Discord = require('discord.js');
 const fs = require('fs');
 let tags = require('./files/tags.js');
+let styles = require('./files/styles.js');
 const prefix = config.prefix;
 const versions = config.versions;
 
@@ -13,7 +14,23 @@ function help(robot, mess, args){
   mess.channel.send(fileContent).then(mess.channel.send(mess.author));
 }
 
-//Вывожу описание тега
+//Вывожу описание css свойства
+function getstyle(robot, mess, args){
+  let params = mess.content.split(' ');
+  let description = "";
+  if(params[1]==null){
+    mess.channel.send("Не указан какое свойство").then(mess.channel.send(mess.author));
+    return true;
+  }
+  if(styles.has(params[1]))
+    description = styles.get(params[1]);
+  else
+    description = "Я такое свойство не знаю(";
+   
+  mess.channel.send(description).then(mess.channel.send(mess.author));
+}
+
+//Вывожу описание html тега
 function tag(robot, mess, args){
   let params = mess.content.split(' ');
   let description = "";
@@ -127,7 +144,12 @@ var comms_list = [
   {
     name: "tag",
     out: tag,
-    about: "Возвращает описание тега"
+    about: "Возвращает описание html тега"
+  },
+  {
+    name: "style",
+    out: getstyle,
+    about: "Возвращает описание css свойства"
   }
 ];
 
